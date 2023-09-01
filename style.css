@@ -62,7 +62,7 @@ h1 {
 }
 
 .wrapper {
-  max-width: 50rem;
+  max-width: var(--wrapper-max-width);
   margin-inline: auto;
   padding-inline: var(--wrapper-padding-inline);
 }
@@ -82,9 +82,16 @@ h1 {
     /*grid-template-columns: 1rem minmax(0, 25rem) minmax(0, 25rem) 1rem;*/
 
     /* Now make the 1st and 4th columns flexible as well. Very smart way of doing this. */
-    grid-template-columns: minmax(1rem, 1fr) minmax(0, 25rem) minmax(0, 25rem) minmax(
-        1rem,
-        1fr
-      );
+    /*grid-template-columns: minmax(1rem, 1fr) minmax(0, 25rem) minmax(0, 25rem) minmax(*/
+    /*    1rem,*/
+    /*    1fr*/
+    /*  );*/
+
+    /* Now use custom property */
+    grid-template-columns:
+      minmax(var(--wrapper-padding-inline), 1fr)
+      minmax(0, calc(var(--wrapper-max-width) / 2))
+      minmax(0, calc(var(--wrapper-max-width) / 2))
+      minmax(var(--wrapper-padding-inline), 1fr);
   }
 }
