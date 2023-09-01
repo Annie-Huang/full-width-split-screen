@@ -1,0 +1,6 @@
+How to escape the container on only one side (https://www.youtube.com/watch?v=Ivk8Blw2VTI)
+
+https://codepen.io/kevinpowell/pen/ZEmgQvV
+https://github.com/Annie-Huang/full-width-split-screen
+
+--------------------------------------------------------------------------------------
