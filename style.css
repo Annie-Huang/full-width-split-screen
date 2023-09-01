@@ -94,4 +94,8 @@ h1 {
       minmax(0, calc(var(--wrapper-max-width) / 2))
       minmax(var(--wrapper-padding-inline), 1fr);
   }
+
+  .full-width-split-screen > img {
+    grid-column: 1 / 3;
+  }
 }
