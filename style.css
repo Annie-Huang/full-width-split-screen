@@ -77,7 +77,14 @@ h1 {
     display: grid;
 
     /*grid-template-columns: 1rem 1fr 1fr 1rem;*/
+
     /* The reason it will be 25rem is that it will match 1/2 of .wrapper's max-width */
-    grid-template-columns: 1rem minmax(0, 25rem) minmax(0, 25rem) 1rem;
+    /*grid-template-columns: 1rem minmax(0, 25rem) minmax(0, 25rem) 1rem;*/
+
+    /* Now make the 1st and 4th columns flexible as well. Very smart way of doing this. */
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 25rem) minmax(0, 25rem) minmax(
+        1rem,
+        1fr
+      );
   }
 }
