@@ -131,10 +131,14 @@ section {
   /* Scenario B: the <img> is the last element. The text element occupy the 2nd column */
   .full-width-split-screen > :not(img):first-child {
     grid-column: 2 / span 1;
+
+    padding-left: 0; /* no padding-left if it's in the 2nd column to it can left align with <section> that only got text (wrapped with .wrapper) */
   }
   /* Scenario A: the <img> is the first element. The text element occupy the 3rd column */
   .full-width-split-screen > :not(img):last-child {
     grid-column: 3 / span 1;
+
+    padding-right: 0; /* no padding-right if it's in the 3rd column to it can right align with <section> that only got text (wrapped with .wrapper) */
   }
 
   .full-width-split-screen > :not(img)::before {
