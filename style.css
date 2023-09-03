@@ -33,7 +33,7 @@ h1 {
 
 /* For <section> without a .full-width-split-screen class */
 section {
-  padding-block: 3rem;
+  padding-block: var(--section-padding-block);
 }
 
 .primary {
@@ -81,6 +81,7 @@ section {
 
 /* The <img> component will still stay with teh full width */
 .full-width-split-screen > :not(img) {
+  padding-block: var(--section-padding-block);
   padding-inline: var(--wrapper-padding-inline);
 }
 
