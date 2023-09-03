@@ -98,10 +98,12 @@ h1 {
     position: relative;
   }
 
+  /* Image occupy the first 2 column */
   .full-width-split-screen > img {
     grid-column: 1 / 3;
   }
 
+  /* The text element occupy the 3rd column */
   .full-width-split-screen > :not(img) {
     /* Use grid rather that align-items in the parent because align-items place the content into the middle rather than stretching the whole height
        And you will see if there is background color for the <div>, it will not work.
@@ -111,6 +113,7 @@ h1 {
     justify-items: start;
   }
 
+  /* The pseudo element occupy the 4th column */
   .full-width-split-screen > :not(img)::before {
     content: '';
     position: absolute;
