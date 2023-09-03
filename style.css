@@ -98,9 +98,13 @@ h1 {
     position: relative;
   }
 
-  /* Image occupy the first 2 column */
-  .full-width-split-screen > img {
+  /* Image occupy the first 2 column if the <img> comes first */
+  .full-width-split-screen > img:first-child {
     grid-column: 1 / 3;
+  }
+  /* Image occupy the last 2 column if the <img> comes last */
+  .full-width-split-screen > img:last-child {
+    grid-column: space / -1;
   }
 
   /* The text element occupy the 3rd column */
