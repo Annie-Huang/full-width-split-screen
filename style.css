@@ -98,13 +98,13 @@ h1 {
     position: relative;
   }
 
-  /* Scenario A: Image occupy the first 2 column if the <img> comes first */
+  /* Scenario A: the <img> is the first element. Image occupy the first 2 columns */
   .full-width-split-screen > img:first-child {
     grid-column: 1 / span 2;
   }
-  /* Scenario B: Image occupy the last 2 column if the <img> comes last */
+  /* Scenario B: the <img> is the last element. Image occupy the last 2 columns */
   .full-width-split-screen > img:last-child {
-    grid-column: space / -1;
+    grid-column: span 2 / -1;
   }
 
   .full-width-split-screen > :not(img) {
@@ -115,21 +115,27 @@ h1 {
     align-content: center;
     justify-items: start;
   }
-  /* Scenario B: The text element occupy the 2nd column */
+  /* Scenario B: the <img> is the last element. The text element occupy the 2nd column */
   .full-width-split-screen > :not(img):first-child {
     grid-column: 2 / span 1;
   }
-  /* Scenario A: The text element occupy the 3rd column */
+  /* Scenario A: the <img> is the first element. The text element occupy the 3rd column */
   .full-width-split-screen > :not(img):last-child {
     grid-column: 3 / span 1;
   }
 
-  /* The pseudo element occupy the 4th column */
   .full-width-split-screen > :not(img)::before {
     content: '';
     position: absolute;
     inset: 0;
-    grid-column: span 1 / -1; /* !!!! Make it occupy the last column */
     background: inherit;
+  }
+  /* Scenario B: the <img> is the last element. The pseudo element occupy the 1st column */
+  .full-width-split-screen > :not(img):first-child::before {
+    grid-column: 1 / span 1; /* !!!! Make it occupy the first column */
+  }
+  /* Scenario A: the <img> is the first element. The pseudo element occupy the 4th column */
+  .full-width-split-screen > :not(img):last-child::before {
+    grid-column: span 1 / -1; /* !!!! Make it occupy the last column */
   }
 }
