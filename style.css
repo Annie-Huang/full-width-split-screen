@@ -93,6 +93,9 @@ h1 {
       minmax(0, calc(var(--wrapper-max-width) / 2))
       minmax(0, calc(var(--wrapper-max-width) / 2))
       minmax(var(--wrapper-padding-inline), 1fr);
+
+    /* So the '.full-width-split-screen > :not(img)::before' can absolute against with */
+    position: relative;
   }
 
   .full-width-split-screen > img {
@@ -106,5 +109,12 @@ h1 {
     display: grid;
     align-content: center;
     justify-items: start;
+  }
+
+  .full-width-split-screen > :not(img)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: limegreen;
   }
 }
