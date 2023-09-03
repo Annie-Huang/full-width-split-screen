@@ -115,6 +115,7 @@ h1 {
     content: '';
     position: absolute;
     inset: 0;
-    background: limegreen;
+    grid-column: span 1 / -1; /* !!!! Make it occupy the last column */
+    background: inherit;
   }
 }
