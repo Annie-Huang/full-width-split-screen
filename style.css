@@ -98,16 +98,15 @@ h1 {
     position: relative;
   }
 
-  /* Image occupy the first 2 column if the <img> comes first */
+  /* Scenario A: Image occupy the first 2 column if the <img> comes first */
   .full-width-split-screen > img:first-child {
-    grid-column: 1 / 3;
+    grid-column: 1 / span 2;
   }
-  /* Image occupy the last 2 column if the <img> comes last */
+  /* Scenario B: Image occupy the last 2 column if the <img> comes last */
   .full-width-split-screen > img:last-child {
     grid-column: space / -1;
   }
 
-  /* The text element occupy the 3rd column */
   .full-width-split-screen > :not(img) {
     /* Use grid rather that align-items in the parent because align-items place the content into the middle rather than stretching the whole height
        And you will see if there is background color for the <div>, it will not work.
@@ -115,6 +114,14 @@ h1 {
     display: grid;
     align-content: center;
     justify-items: start;
+  }
+  /* Scenario B: The text element occupy the 2nd column */
+  .full-width-split-screen > :not(img):first-child {
+    grid-column: 2 / span 1;
+  }
+  /* Scenario A: The text element occupy the 3rd column */
+  .full-width-split-screen > :not(img):last-child {
+    grid-column: 3 / span 1;
   }
 
   /* The pseudo element occupy the 4th column */
