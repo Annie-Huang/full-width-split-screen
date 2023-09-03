@@ -111,6 +111,13 @@ section {
     position: relative;
   }
 
+  /* Make sure the image will fix the whole space with the text section is too long */
+  .full-width-split-screen > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   /* Scenario A: the <img> is the first element. Image occupy the first 2 columns */
   .full-width-split-screen > img:first-child {
     grid-column: 1 / span 2;
